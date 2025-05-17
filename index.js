@@ -1,3 +1,13 @@
+import 'react-native-get-random-values';
+import { Buffer } from 'buffer';
+global.Buffer = Buffer;
+
+// Stream polyfill için
+if (typeof global.process === 'undefined') {
+  global.process = { browser: true }; // stream-browserify'ın çalışması için gerekli
+}
+global.stream = require('stream-browserify');
+
 /**
  * @format
  */
